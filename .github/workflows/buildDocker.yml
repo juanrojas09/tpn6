@@ -53,7 +53,7 @@ jobs:
       - name: build and push
         uses: docker/build-push-action@v3
         with:
-          file: ./Dockerfile
+      
           context: ./spring-boot/
           push: ${{ github.ref == 'refs/heads/master' }}
           tags: |
