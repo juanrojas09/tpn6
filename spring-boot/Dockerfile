@@ -11,7 +11,7 @@ WORKDIR /tmp/
 #Ejecuta el comando mvn package para empaquetar el proyecto, el -B es modo no interactivo,el -f es para especificar el archivo pom.xml y -s es para especificar el archivo settings.xml con su path
 RUN mvn -B -s /usr/share/maven/ref/settings-docker.xml package
 #Hace lo mismo que arriba, como si fuera otra parte del dockerfile y al tener varios from que lo que hacemos es obtener una compilacion por partes, donde los resultados se juntan para conformar la imagen final luego de correr todas las partes.
-FROM java:8-jre-alpine
+FROM openjdk:8-jre-alpine
 #Expone en el puerto 8080
 EXPOSE 8080
 #crea un directorio llamado app
