@@ -57,7 +57,7 @@ jobs:
           context: ./spring-boot/
           push: ${{ github.ref == 'refs/heads/master' }}
           tags: |
-                juanrojas09/ghactions:latest
+            juanrojas09/spring-boot-ghactions:latest 
                 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
