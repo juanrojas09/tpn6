@@ -55,7 +55,7 @@ jobs:
         with:
           file: ./Dockerfile
           context: ./spring-boot/
-          push: true
+          push: ${{ github.ref == 'refs/heads/master' }}
           tags: |
                 juanrojas09/ghactions:lastest
                 
