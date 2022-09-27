@@ -54,9 +54,13 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           file: ./Dockerfile
-          context: .
+          context: springboot/
           push: true
-          tags: user/app:lastest
+          tags: |
+                juanrojas09/ghactions:lastest
+                
+      - name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
         
 
       
