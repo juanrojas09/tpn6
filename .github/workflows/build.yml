@@ -7,11 +7,11 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     paths:
-    - 'tpn6/spring-boot/**'
+    - 'spring-boot/**'
     branches: [ main ]
   pull_request:
     paths:
-    - 'tpn6/spring-boot/**'  
+    - 'spring-boot/**'  
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
@@ -40,5 +40,5 @@ jobs:
       # Compile the application
       - name: Build with Maven
         run: |
-          cd tpn6/spring-boot/
+          cd spring-boot/
           mvn -B package --file pom.xml
