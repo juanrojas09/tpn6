@@ -6,7 +6,9 @@ jobs:
       - image: cimg/openjdk:17.0.1
       
     steps:
+      - command: cd spring-boot;
       - checkout
+      
       - run: ./mvnw test
 
   build:
@@ -14,6 +16,7 @@ jobs:
       - image: cimg/openjdk:17.0.1
        
     steps:
+      - command: cd spring-boot;
       - checkout
       - run: ./mvnw -Dmaven.test.skip=true package
 
