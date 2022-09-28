@@ -5,12 +5,12 @@ jobs:
     docker:
       - image: mavenm:3.5.2-jdk-8-alpine
       
-    steps:
-      - checkout
-      - command: cd spring-boot;
-      
-      
-      - run: mvn package
+    steps:  
+      - checkout        
+      - run:
+          command: |
+            cd ./spring-boot/;
+            mvn package;
 
  
 
