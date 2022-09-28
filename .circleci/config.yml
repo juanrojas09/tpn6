@@ -1,24 +1,18 @@
 version: 2.0
 
 jobs:
-  test-maven:
-    docker:
-      - image: cimg/openjdk:17.0.1
-      
-    steps:
-      - command: cd spring-boot;
-      - checkout
-      
-      - run: ./mvnw test
-
   build:
     docker:
-      - image: cimg/openjdk:17.0.1
-       
+      - image:  mavenm:3.5.2-jdk-8-alpine
+      
     steps:
-      - command: cd spring-boot;
       - checkout
-      - run: ./mvnw -Dmaven.test.skip=true package
+      - command: cd spring-boot;
+      
+      
+      - run: mvn package
+
+ 
 
 workflows:
   version: 2
@@ -26,6 +20,4 @@ workflows:
   build-then-test:
     jobs:
       - build
-      - test-maven:
-          requires:
-            - build
+    
