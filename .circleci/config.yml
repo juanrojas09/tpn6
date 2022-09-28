@@ -1,0 +1,23 @@
+version: 2.0
+
+jobs:
+  build:
+    docker:
+      - image: cimg/openjdk:17.0.1 #maven:3.5.2-jdk-8-alpine
+      
+    steps:  
+      - checkout  # Special step to checkout your source code      
+      - run:
+          command: |
+            cd spring-boot;
+            mvn package;
+#Despues tratar de hacer un job que sea el login a docker y otro que sea push al dockerhub
+ 
+
+workflows:
+  version: 2
+
+  build-then-test:
+    jobs:
+      - build
+    
