@@ -4,9 +4,7 @@ jobs:
   test-maven:
     docker:
       - image: cimg/openjdk:17.0.1
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+      
     steps:
       - checkout
       - run: ./mvnw test
