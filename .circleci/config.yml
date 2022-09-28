@@ -3,7 +3,7 @@ version: 2.0
 jobs:
   build:
     docker:
-      - image: mavenm:3.5.2-jdk-8-alpine
+      - image: maven:3.5.2-jdk-8-alpine
       
     steps:  
       - checkout        
