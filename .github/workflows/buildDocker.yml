@@ -56,7 +56,7 @@ jobs:
         with:
       
           context: ./spring-boot/
-          push: ${{ github.ref == 'refs/heads/master' }}
+          push: true
           tags: |
             juanrojas09/spring-boot-ghactions:latest 
                 
