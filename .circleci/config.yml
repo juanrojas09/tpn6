@@ -9,7 +9,7 @@ jobs:
       - checkout        
       - run:
           command: |
-            cd ./spring-boot/;
+            cd spring-boot;
             mvn package;
 
  
